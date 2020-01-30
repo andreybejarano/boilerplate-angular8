@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
-
-
 
 @NgModule({
   declarations: [
@@ -11,6 +10,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     FooterComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     HeaderComponent,

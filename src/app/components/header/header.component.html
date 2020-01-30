@@ -1,4 +1,3 @@
 <div>
-    <span class="link" (click)="toRoute('')">Home </span>
-    <span class="link" (click)="toRoute('/about')">About</span>
+  <span class="link" *ngFor="let link of links" (click)="toRoute(link.path)">{{link.name}} </span>
 </div>

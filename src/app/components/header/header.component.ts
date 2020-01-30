@@ -7,7 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  links = [
+    {
+      path: '',
+      name: 'Home'
+    },
+    {
+      path: '/about',
+      name: 'About'
+    }
+  ]
+  constructor(private router: Router) { }
 
   toRoute(path) {
     this.router.navigate([path]);
