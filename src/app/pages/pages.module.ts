@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatTableModule
 } from '@angular/material'
 
 
@@ -20,10 +22,12 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   imports: [
+    CommonModule,
     RouterModule,
     DefaultModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   exports: [
     DefaultComponent,
