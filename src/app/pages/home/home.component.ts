@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
-import { MoviesService } from 'src/app/services/movies.service';
+import { moviesSelector } from '../../store/'
+import { getMoviesRequest } from 'src/app/store/movies/movies.actions';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +12,10 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class HomeComponent {
   content = 'Home';
   movies = null;
-  constructor(private moviesService: MoviesService) {}
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
-    this.getMovies();
-  }
-
-  async getMovies() {
-    this.moviesService.getMobies().subscribe((movies) => {
-      this.movies = movies;
-    });
+    this.store.dispatch(getMoviesRequest());
+    this.store.select(moviesSelector).subscribe(movies => { this.movies = movies });
   }
 }

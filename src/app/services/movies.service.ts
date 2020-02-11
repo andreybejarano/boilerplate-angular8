@@ -9,7 +9,7 @@ import config from 'src/config';
 export class MoviesService {
   constructor(private http: HttpClient) { }
 
-  getMobies() {
+  getMovies() {
     const options = {
       params: new HttpParams().set('api_key', config.apiMovieDb.apiKey)
     }
